@@ -55,3 +55,52 @@ let confirm = confirm("¿Quiere seguir comprando?")
 }while(confirm ("¿Quiere sefuir comprando?")){
 }
 alert ("Gracias por elegirnos.")
+
+// Segunda pre entrega
+
+
+
+class Cafe {
+    constructor(proceso, origen, tostado, precio){
+        this.nombre = proceso;
+        this.origen = origen;
+        this.variedad = tostado;
+        this.precio = precio
+
+    }
+}
+
+const cafes = []
+cafes.push (new Cafe("Honey", "Etiopia", "medio", 1200))
+cafes.push (new Cafe("Natural", "Colombia", "suave", 1500))
+cafes.push (new Cafe("Washed", "Nicaragua", "intenso", 1800))
+cafes.push (new Cafe("Fully Washed", "Costa Rica", "equilibrado", 1000)) 
+
+console.log(cafes)
+
+prompt("¿Quiere ingresar nuevos productos?")
+ let nuevoIngreso = 0
+  while (nuevoIngreso < 3) {
+      let pregunta = new Cafe (prompt("Ingrese el tipo de proceso  "),
+                             prompt("Inrese el origen"),
+                             prompt("Inrese el tipo de tostado"),
+                             Number (prompt("Inrese el precio")))
+      cafes.push(pregunta)
+      console.log(cafes)
+      nuevoIngreso++
+  }
+  console.log(cafes)
+
+  
+prompt("¿Quiere filtrar los productos por su precio?")
+const filtrarPORPRECIOFLECHA = (precio) => cafes.filter (propiedades => propiedades.precio <= Number (precio))
+
+ function filtrarPorPrecio(precio){
+     return cafes.filter(propiedades => propiedades.precio >= Number(precio))
+ }
+
+let precio = prompt("Ingresa el valor por tipo de precio a filtrar")
+
+console.log(filtrarPORPRECIOFLECHA(precio))
+
+alert(filtrarPorPrecio())
